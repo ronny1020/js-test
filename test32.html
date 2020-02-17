@@ -1,0 +1,28 @@
+<script>
+    function getInfo2(people) {
+        return this.name + ":" + this.age;
+    }
+    let person = {
+        name: 'brad',
+        age: '18',
+        getInfo: function() {
+            return this.name + ":" + this.age;
+        }
+    };
+
+
+    let peter = {
+        name: 'peter',
+        age: '20',
+    };
+
+
+    let tony = {
+        name: 'tony',
+        age: '20',
+    };
+
+    document.write(person.getInfo.call(peter) + '<br>')
+    document.write(person.getInfo() + '<br>')
+    document.write(getInfo2(person) + '<br>')
+</script>

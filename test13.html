@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <script>
+        document.write("<table class=\"table table-striped table-bordered\">");
+        for (i = 1; i < 10; i++) {
+            document.write("<tr>");
+            for (j = 1; j < 10; j++) {
+                document.write("<td>");
+                mul = i * j
+                document.write(`${j} X ${i} = ${mul}  `);
+                document.write("</td> ");
+            }
+            document.write("</tr> ");
+        }
+        document.write("</table>");
+        document.write("<hr>");
+
+
+        const ROW = 3;
+        const START = 1;
+        const COL = 3;
+
+        document.write("<table class=\"table table-striped table-bordered\">");
+
+        for (k = 0; k < ROW; k++) {
+            document.write("<tr>");
+            for (i = START; i < COL + START; i++) {
+                i2 = k * COL + i
+                if (i2 % 2 == 0) {
+                    document.write(`<td bgcolor="gray">`);
+                } else {
+                    document.write(`<td>`);
+                }
+                for (j = 1; j < 10; j++) {
+
+                    mul = i2 * j
+                    document.write(`${i2} X ${j} = ${mul}  <br>`);
+
+                }
+                document.write("</td> ");
+            }
+            document.write("</tr> ");
+        }
+        document.write("</table>");
+    </script>
+
+</body>
+
+</html>

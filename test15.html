@@ -1,0 +1,39 @@
+<script>
+    let ary1 = new Array();
+    let ary2 = [];
+    let ary3 = [1, 2, 3, 4];
+    document.write(typeof ary1, "<br>");
+    document.write(ary3.length, "<br>");
+
+    for (let i = 0; i < ary3.length; i++) {
+        document.write(ary3[i], "<br>");
+    }
+    document.write("<hr>");
+
+    for (let j of ary3) {
+        document.write(j, "<br>");
+    }
+    document.write("<hr>");
+    ary3[4] = 101;
+
+    document.write(ary3[4], "<br>");
+    document.write("<hr>");
+    for (let j of ary3) {
+        document.write(j, "<br>");
+    }
+    document.write("<hr>");
+    ary3.push(102);
+    for (let j of ary3) {
+        document.write(j, "<br>");
+    }
+    document.write("<hr>");
+    ary3.pop();
+    for (let j of ary3) {
+        document.write(j, "<br>");
+    }
+    document.write("<hr>");
+    ary3.shift();
+    for (let j of ary3) {
+        document.write(j, "<br>");
+    }
+</script>

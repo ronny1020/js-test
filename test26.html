@@ -1,0 +1,19 @@
+<script>
+    let person = [];
+    person['name'] = 'test'
+    person['age'] = 18;
+    document.write(person['name'] + ':' + person['age'] + '<br>')
+    person.push(123);
+    person.push('XXX');
+    for (i of person) {
+        document.write(i + "<hr>");
+    }
+    for (i in person) {
+        document.write(i + ':' + person[i] + "<br>")
+    }
+
+    person['eat'] = function() {
+        document.write(this.name + ' eating' + "<br>")
+    };
+    person.eat()
+</script>

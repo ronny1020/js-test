@@ -1,0 +1,57 @@
+<h1>
+
+    Hello World!</h1>
+<hr>
+<input type="button" value="test1" onclick="test1()">
+<input type="button" value="test2" onclick="test2()">
+
+<hr>
+<div id='div1'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<span>test</span><span></span><span></span><span></span><span></span><span></span><span></span>
+
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+<hr>
+<div id='div2'></div>
+
+
+<script>
+    function test1() {
+        div1 = document.querySelector('#div1');
+        div1.innerHTML = "Hello, world!"
+    }
+
+    function test2() {
+        div2 = document.querySelectorAll('#div2');
+        for (i of div2) {
+            i.innerHTML = "Hello, world!"
+        }
+
+
+
+    }
+
+    spans = document.getElementsByTagName('span')
+    for (i of spans) {
+        i.innerHTML = "Hello"
+    }
+</script>

@@ -1,0 +1,48 @@
+<script>
+    function doCalc() {
+        document.getElementById("x");
+        document.getElementById("y");
+        let xv = parseInt(x.value);
+        let yv = parseInt(y.value);
+        let sel = document.getElementById("op").selectedIndex;
+        console.log(op);
+
+        let ans
+
+        if (sel == 0) {
+            ans = xv + yv;
+        } else if (sel == 1) {
+            ans = xv - yv;
+
+        } else if (sel == 2) {
+            ans = xv * yv;
+
+        } else {
+            ans = parseInt(xv / yv);
+
+            ans2 = xv % yv;
+            // ans = string(ans) + "....." + string(ans2)
+        }
+        document.getElementById("here").innerHTML = ans;
+        document.getElementById("here").innerHTML = ans2;
+
+
+    }
+</script>
+
+<input type="text" id="x">
+
+
+<select id="op">
+    <option> + </option>
+    <option> - </option>
+    <option> * </option>
+    <option> / </option>
+</select>
+
+
+<input type="text" id="y">
+
+
+<input type="button" value="=" onclick="doCalc()">
+<span id="here"></span>

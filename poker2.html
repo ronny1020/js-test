@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<script>
+    let poker = []
+        // poker[0] = 0;
+    for (i = 0; i < 52; i++) {
+        poker[i] = i;
+    }
+    document.write("<br>", poker)
+    for (i = 0; i < poker.length; i++) {
+        rand = Math.floor(Math.random() * poker.length);
+        [poker[i], poker[rand]] = [poker[rand], poker[i]];
+    }
+    document.write("<br>", poker)
+
+
+
+    let player = [
+        [],
+        [],
+        [],
+        []
+    ]
+    for (i = 0; i < poker.length; i++) {
+        player[i % 4].push(poker[i]);
+    }
+    document.write("<br>", player[0])
+    document.write("<br>", player[1])
+    document.write("<br>", player[2])
+    document.write("<br>", player[3])
+    player[0].sort(function(a, b) {
+        return a - b
+    });
+    player[1].sort(function(a, b) {
+        return a - b
+    });
+    player[2].sort(function(a, b) {
+        return a - b
+    });
+    player[3].sort(function(a, b) {
+        return a - b
+    });
+    // diamonds
+    suits = ['&spades;', '&hearts;', '&diams;', '&clubs;'];
+    nums = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+    document.write(`<table class="container table">`)
+    for (i = 0; i < player.length; i++) {
+        document.write(`<tr>`)
+        for (card of player[i]) {
+
+            switch (Math.floor(card / 13)) {
+                case 0:
+                case 3:
+                    document.write(`<td> ${suits[Math.floor(card/13)]} ${nums[card%13]}</td>`)
+                    break;
+                default:
+                    document.write(`<td style="color:red;"> ${suits[Math.floor(card/13)]} ${nums[card%13]}</td>`)
+            }
+
+        }
+        document.write(`</tr >`)
+    }
+    document.write(`</table >`)
+</script>

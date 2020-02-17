@@ -1,0 +1,29 @@
+<script>
+    let timertask = null;
+
+    function time() {
+        timertask = setTimeout(timeout, 3000);
+
+
+    }
+
+    function timeout() {
+        document.getElementById("here").innerHTML = "ok";
+    }
+
+    function time2() {
+        if (timertask != null) {
+            console.log(timertask);
+            clearTimeout(timertask);
+            document.getElementById("here").innerHTML = "canceled";
+        }
+
+    }
+</script>
+<input type="button" value="click" onclick="time()">
+<br>
+<input type="button" value="click" onclick="time2()">
+<hr>
+<div id="here">
+
+</div>

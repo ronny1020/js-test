@@ -1,0 +1,11 @@
+<script>
+    // d1 = d2 = d3 = d4 = d5 = d6 = 0;
+    dice_time = [0, 0, 0, 0, 0, 0];
+    for (i = 0; i < 100; i++) {
+        dice = Math.floor(Math.random() * 6) + 1;
+        document.write(dice);
+        dice_time[dice - 1]++;
+    }
+
+    document.write("<hr>", dice_time)
+</script>

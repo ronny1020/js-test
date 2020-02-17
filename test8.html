@@ -1,0 +1,32 @@
+<input type="text" id="year">
+<input type="button" value="If it's leap year?" onclick="leapyear()">
+<span id='result'></span>
+
+<script>
+    function leapyear() {
+
+        let year = parseInt(document.getElementById("year").value);
+        let leap
+            // if (year % 400 == 0) {
+            //     leap = "yes"
+            // } else if (year % 100 == 0) {
+            //     leap = "no"
+            // } else if (year % 4 == 0) {
+            //     leap = "yea"
+            // } else {
+            //     leap = "no"
+            // };
+
+
+
+            ((year % 400) || (year % 4 == 0 && year % 100 != 0)) ?
+            leap = "yes" :
+            leap = "no";
+
+
+
+        ans = year + " " + leap
+
+        document.getElementById("result").innerHTML = ans;
+    }
+</script>

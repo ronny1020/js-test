@@ -1,0 +1,29 @@
+<script>
+    let poker = [];
+    poker[0] = Math.floor(Math.random() * 52);
+    for (let i = 1; i < 52; i++) {
+        let rand = Math.floor(Math.random() * 52);
+        //check repeat
+
+        for (j = 0; j < i; j++) {
+            //     // document.write("<hr>", j)
+            if (rand == poker[j]) {
+                i--;
+
+                break
+            } else {
+
+
+            }
+            poker[i] = rand;
+        }
+        document.write("<br>", poker)
+    }
+    document.write("<hr>", poker)
+    document.write("<hr>", poker.length)
+    sum = 0
+    for (k of poker) {
+        sum += k
+    }
+    document.write("<hr>", sum)
+</script>

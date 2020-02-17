@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="test21.js"></script>
+    <script>
+        function checkID() {
+            let twid = document.getElementById("twid").value;
+            let result = checktwid(twid);
+            if (result) {
+                document.getElementById("idresult").innerHTML = "ok";
+            } else {
+                document.getElementById("idresult").innerHTML = "error";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form class="form" action="test.php">
+        <label>Name:</label><input type="text"><br>
+        <label>ID:</label><input type="text" id="twid" onblur="checkID()"><span id="idresult"></span><br>
+        </span>
+        <label>Gender:</label><label>Male</label><input type="radio"><label>Female</label><input type="radio"><br>
+        <input type="submit" value="Register"><br>
+    </form>
+</body>
+
+</html>

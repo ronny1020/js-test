@@ -1,0 +1,28 @@
+<script>
+    for (i = 0; i < 100; i++) {
+        if (i < 10) {
+            document.write("0" + i + "-")
+        } else {
+            document.write(i + "-")
+        }
+        let score = Math.floor(Math.random() * 101);
+        document.write(score);
+        if (score >= 90) {
+            document.write("A" + `<br>`)
+        } else if (score >= 80) {
+            document.write("B" + `<br>`)
+
+        } else if (score >= 70) {
+            document.write("C" + `<br>`)
+
+        } else if (score >= 60) {
+            document.write("D" + `<br>`)
+
+        } else if (score >= 50) {
+            document.write("E" + `<br>`)
+
+        } else {
+            document.write("F" + `<br>`)
+        }
+    }
+</script>

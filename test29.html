@@ -1,0 +1,45 @@
+<P>1</P>
+<br>
+<script>
+    let body = document.createElement('body');
+    document.body = body;
+    let header = document.createElement('h1');
+    let h1text = document.createTextNode('Hello world!');
+    header.appendChild(h1text);
+    header.appendChild(h1text);
+    body.appendChild(header);
+
+    hr = document.createElement('hr');
+    body.appendChild(hr);
+
+    ol = document.createElement('ol')
+    body.appendChild(ol);
+
+    li = document.createElement('li');
+    ol.appendChild(li);
+
+    li = document.createElement('li');
+    ol.appendChild(li);
+    li = document.createElement('li');
+    ol.appendChild(li);
+
+
+
+
+    hr2 = hr.cloneNode();
+    body.appendChild(hr2);
+
+
+
+    input = document.createElement('input');
+    body.appendChild(input);
+    input.type = "button";
+    input.value = "click";
+    input.onclick = function() {
+        setTimeout(() => {
+            hr.style.borderColor = 'yellow';
+        }, 1000);
+    }
+</script>
+<br>
+<P>2</P>

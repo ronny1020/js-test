@@ -1,0 +1,40 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<script>
+    i = 0;
+    timertask = null;
+    isrunning = false;
+
+    function start() {
+        if (isrunning) return;
+        isrunning = true;
+        timertask = setInterval(logging, 1);
+
+    }
+
+
+    function logging() {
+        document.getElementById('here').innerHTML = ++i;
+    }
+
+
+    function pause() {
+        if (timertask != null) {
+            clearInterval(timertask);
+        }
+    }
+
+    function zero() {
+        i = 0;
+        document.getElementById('here').innerHTML = i;
+    }
+</script>
+<input type="button" value="start" class="btn" onclick="start()" disabled>
+<input type="button" value="pause" class="btn" onclick="pause()">
+<input type="button" value="zero" class="btn" onclick="zero()">
+
+<hr>
+<div id="here">

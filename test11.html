@@ -1,0 +1,18 @@
+<script>
+    let month = Math.floor(Math.random() * 12) + 1;
+
+    switch (month) {
+
+        case 2:
+            day = 28;
+            break;
+        case 4, 6, 9, 11:
+            day = 30;
+            break;
+        default:
+            day = 31;
+    }
+
+    // document.write(month);
+    document.write(`${month}  ${day}`)
+</script>

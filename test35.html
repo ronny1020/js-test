@@ -1,0 +1,88 @@
+<canvas id="canvas" width="480" height="320" style="border: 1px solid black;">
+</canvas>
+<script>
+    ctx = canvas.getContext('2d');
+    bg = new Image()
+    bg.src = 'iiijs-master/bg.jpg';
+    ball1 = new Image()
+    ball2 = new Image()
+    ball3 = new Image()
+    ball1.src = 'iiijs-master/ball1.png';
+    ball2.src = 'iiijs-master/ball2.png';
+    ball3.src = 'iiijs-master/ball3.png';
+
+    ballImg = [ball1, ball2, ball3];
+    balls = [];
+    // ballObj = {
+    //     x: 0,
+    //     y: 0,
+    //     dx = 8,
+    //     dy = 8,
+    //     img= 0,
+    // };
+    ballObj = function() {
+        this.x = 0;
+        this.y = 0;
+        this.dx = 1;
+        this.dy = 1;
+        this.img = 0;
+    }
+
+
+
+    // bg.onload = function() {
+    //     ctx.drawImage(bg, 0, 0);
+    // }
+
+    function reFreshView() {
+        ctx.drawImage(bg, 0, 0);
+        for (ball of balls) {
+            ctx.drawImage(ballImg[ball.img], ball.x, ball.y);
+        }
+    }
+    setInterval(reFreshView, 16);
+    canvas.onmousedown = function(e) {
+        ball = new ballObj();
+        ball.x = e.offsetX - 24;
+        ball.y = e.offsetY - 24;
+        ball.dx = Math.random() * 2 - 1;
+        ball.dy = Math.random() * 2 - 1;
+        ball.img = Math.floor(Math.random() * 3);
+        balls.push(ball);
+
+    }
+
+    // function newBall() {
+    //     $ball = new ballObj();
+    //     $ball.x = Math.random() * 480;
+    //     $ball.y = Math.random() * 320;
+    //     $ball.dx = Math.random() * 2 - 1;
+    //     $ball.dy = Math.random() * 2 - 1;
+    //     $ball.img = Math.floor(Math.random() * 3);
+    //     balls.push($ball);
+    // }
+    // console.log(Object.prototype.toString.call(newBall))
+    // setInterval(newBall, 1);
+
+
+
+
+
+    function moveBall(ball) {
+        if ((ball.x < 0 && ball.dx < 0) || (ball.x > canvas.width - 48 && ball.dx > 0)) {
+            ball.dx *= -1;
+        }
+        if ((ball.y < 0 && ball.dy < 0) || (ball.y > canvas.height - 48 && ball.dy > 0)) {
+            ball.dy *= -1;
+        }
+        ball.x += ball.dx;
+        ball.y += ball.dy;
+    }
+
+    function go() {
+        for (ball of balls)
+            moveBall(ball)
+    }
+
+    setInterval(go, 16);
+</script>

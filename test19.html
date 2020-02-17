@@ -1,0 +1,35 @@
+YAYAYA
+
+<script>
+    function sayYa(name = "R") {
+        // document.open()
+        document.write(`ya!${name}<br>`)
+            // document.class()
+    }
+
+    function sayYa3(names) {
+        if (names instanceof Array) {
+            for (name of names)
+                document.write(`ya!${name}<br>`)
+        }
+    }
+
+    function sayYa4(...names) {
+        for (name of names)
+            document.write(`ya!${name}<br>`)
+    }
+
+    function sayYa5(welcome, ...names) {
+        for (name of names)
+            document.write(`${welcome}!${name}<br>`)
+    }
+
+
+
+
+    sayYa();
+    sayYa();
+    sayYa3(["a", "b", "c"]);
+    sayYa4("a", "b", "c");
+    sayYa5("hi", "a", "b", "c");
+</script>

@@ -1,0 +1,42 @@
+<script>
+    // let bike = new Object();
+    // document.write(bike, "<br>");
+    // bike.speed = 0;
+    // document.write(bike.speed, "<br>");
+    // document.write(bike, "<br>");
+    // bike.upSpeed = function() {
+    //     this.speed = this.speed < 1 ? 1 : this.speed * 1.2;
+    // };
+    // bike.upSpeed()
+    // bike.upSpeed()
+    // bike.upSpeed()
+    // document.write(bike.speed, "<br>");
+
+    let scooter = {
+        speed: 0,
+        gear: 1,
+        upSpeed: function() {
+            this.speed = this.speed < 1 ? 1 : this.speed * this.gear * 1.2;
+        },
+        downSpeed: function() {
+            this.speed = this.speed < 1 ? 0 : this.speed * 0.7;
+        }
+    };
+    document.write(scooter.speed + "<hr>");
+
+
+    scooter.upSpeed();
+    scooter.upSpeed();
+    document.write(scooter.speed + "<hr>");
+
+
+    scooter['upSpeed']();
+    document.write(scooter.speed + "<hr>");
+
+
+
+    scooter['test'] = {
+        gogo: 0
+    }
+    document.write(scooter.test.gogo + "<hr>");
+</script>
