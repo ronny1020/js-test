@@ -1,0 +1,26 @@
+<body>
+    1.
+</body>
+
+
+<script>
+    body = document.body;
+
+    HTMLElement.prototype.CreateAppend = function(element, context, ...attr) {
+        e = document.createElement(element)
+        if (context != undefined) {
+            e.innerHTML = context;
+        }
+        for (i = 0; i < Math.floor(attr.length); i = i + 2) {
+            e.setAttribute(attr[i], attr[i + 1]);
+
+        }
+        this.appendChild(e);
+    };
+
+    console.log(Object.prototype.toString.call(Element));
+    body.CreateAppend("h1", Element);
+    for (i in Element) {
+        body.CreateAppend("h5", i);
+    }
+</script>
